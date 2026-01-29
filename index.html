@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Parade Is...</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Serif', serif;
+            font-style: italic;
+            background-color: #540076;
+            color: #C0EFBF;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #C0EFBF;
+        }
+
+        .schedule {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            margin-bottom: 3rem;
+        }
+
+        .schedule .date {
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .schedule ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .schedule li {
+            margin-bottom: 0.75rem;
+        }
+
+        .location {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .location strong {
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .route-map {
+            width: 100%;
+            max-width: 800px;
+            border: 4px solid #C0EFBF;
+            border-radius: 8px;
+        }
+
+        .route-map img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>A Parade Is...</h1>
+
+        <h2>All on a Mardi Gras Day</h2>
+
+        <div class="schedule">
+            <p class="date">February 17, 2026</p>
+            <ul>
+                <li>1-3pm: Mask and sign-making</li>
+                <li>3-3:30pm: Parade!</li>
+            </ul>
+        </div>
+
+        <div class="location">
+            <strong>Mask & sign making:</strong> University Center Event Cafe
+            <strong>Parade rolls from:</strong> University Center (63 5th Ave)
+        </div>
+
+        <div class="route-map">
+            <img src="images/ParadeRoute1.png" alt="Parade route map showing the path through The New School campus">
+        </div>
+    </div>
+</body>
+</html>
