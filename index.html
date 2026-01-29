@@ -6,7 +6,7 @@
     <title>A Parade Is...</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@1,400;1,700&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,28 +15,65 @@
         }
 
         body {
-            font-family: 'Roboto Serif', serif;
-            font-style: italic;
+            font-family: 'Work Sans', sans-serif;
             background-color: #540076;
             color: #C0EFBF;
             min-height: 100vh;
-            padding: 2rem;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .left-panel {
+            width: 33.33%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right-panel {
+            width: 66.67%;
+            margin-left: 33.33%;
+            padding: 3rem 4rem;
+            overflow-y: auto;
         }
 
         h1 {
-            font-size: clamp(3rem, 10vw, 6rem);
+            font-family: 'Roboto Serif', serif;
+            font-style: italic;
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 6px 6px 0 #4A3C92;
+            white-space: nowrap;
+        }
+
+        .words {
+            font-family: 'Roboto Serif', serif;
+            font-style: italic;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            transform: rotate(-8deg);
+            transform-origin: left top;
+            margin-left: 0.5rem;
+            text-shadow: 4px 4px 0 #4A3C92;
+        }
+
+        .words span {
+            display: block;
         }
 
         h2 {
-            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            font-size: clamp(2rem, 6vw, 3rem);
             font-weight: 700;
             margin-bottom: 2rem;
             color: #C0EFBF;
@@ -53,29 +90,28 @@
             margin-bottom: 1rem;
         }
 
-        .schedule ul {
-            list-style: none;
-            padding-left: 0;
+        .event {
+            margin-bottom: 2rem;
         }
 
-        .schedule li {
-            margin-bottom: 0.75rem;
+        .event .time {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
         }
 
-        .location {
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
-            margin-bottom: 3rem;
-            line-height: 1.6;
+        .event .activity,
+        .event .venue {
+            padding-left: 1.5rem;
+            line-height: 1.4;
         }
 
-        .location strong {
-            display: block;
-            margin-top: 0.5rem;
+        .event .venue {
+            opacity: 0.9;
         }
 
         .route-map {
             width: 100%;
-            max-width: 800px;
+            max-width: 600px;
             border: 4px solid #C0EFBF;
             border-radius: 8px;
         }
@@ -86,29 +122,101 @@
             display: block;
             border-radius: 4px;
         }
+
+        .description {
+            margin-top: 2rem;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            line-height: 1.7;
+        }
+
+        .sponsors {
+            margin-top: 3rem;
+        }
+
+        .sponsors h3 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .sponsors ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .sponsors li {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+        }
+
+        /* Mobile: stack vertically */
+        @media (max-width: 768px) {
+            .layout {
+                flex-direction: column;
+            }
+
+            .left-panel {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 2rem;
+            }
+
+            .right-panel {
+                width: 100%;
+                margin-left: 0;
+                padding: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>A Parade Is...</h1>
-
-        <h2>All on a Mardi Gras Day</h2>
-
-        <div class="schedule">
-            <p class="date">February 17, 2026</p>
-            <ul>
-                <li>1-3pm: Mask and sign-making</li>
-                <li>3-3:30pm: Parade!</li>
-            </ul>
+    <div class="layout">
+        <div class="left-panel">
+            <h1>A Parade Is...</h1>
+            <div class="words">
+                <span>Procession</span>
+                <span>Performance</span>
+                <span>prayer</span>
+                <span>Protest</span>
+                <span>Party</span>
+            </div>
         </div>
 
-        <div class="location">
-            <strong>Mask & sign making:</strong> University Center Event Cafe
-            <strong>Parade rolls from:</strong> University Center (63 5th Ave)
-        </div>
+        <div class="right-panel">
+            <div class="schedule">
+                <p class="date">February 17, 2026</p>
 
-        <div class="route-map">
-            <img src="images/ParadeRoute1.png" alt="Parade route map showing the path through The New School campus">
+                <div class="event">
+                    <p class="time">1-3pm:</p>
+                    <p class="activity">Mask, costume, and sign-making</p>
+                    <p class="venue">University Center Event Cafe (below the main lobby)</p>
+                </div>
+
+                <div class="event">
+                    <p class="time">3-3:30pm:</p>
+                    <p class="activity">Parade!</p>
+                    <p class="venue">Roll from in front of the University Center (63 5th Ave)</p>
+                </div>
+            </div>
+
+            <div class="route-map">
+                <img src="images/ParadeRoute1.png" alt="Parade route map showing the path through The New School campus">
+            </div>
+
+            <div class="description">
+                <p>This two part engagement invites you to create masks from reclaimed materials, then parade them around campus alongside a second line jazz ensemble in celebration of Mardi Gras. Drawing on the New Orleans Mardi Gras traditions and Parsons historic costume balls, this parade encourages the re-appropriation of materials and community sentiments as tools for both celebration and critique. Parades generate social spaces for community gathering; they also act as a reminder of collective power. In this moment of institutional decomposition, we ask: how might a parade act as an outlet for celebration amid disarray? Whether participating solo or with your 'krewe', join us in blurring the boundaries of spectacle.</p>
+            </div>
+
+            <div class="sponsors">
+                <h3>Sponsors</h3>
+                <ul>
+                    <li>Loop</li>
+                    <li>Material Exchange</li>
+                    <li>Coalition for Cut Programs</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
