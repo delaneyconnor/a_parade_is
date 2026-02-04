@@ -8,6 +8,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@1,400;1,700&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'Open Sauce Sans';
+            src: url('fonts/OpenSauceSans-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Open Sauce Sans';
+            src: url('fonts/OpenSauceSans-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Open Sauce Sans';
+            src: url('fonts/OpenSauceSans-BoldItalic.ttf') format('truetype');
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: 'Open Sauce Sans';
+            src: url('fonts/OpenSauceSans-ExtraBold.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Open Sauce Sans';
+            src: url('fonts/OpenSauceSans-Black.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -15,9 +50,9 @@
         }
 
         body {
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Open Sauce Sans', sans-serif;
             background-color: #540076;
-            color: #C0EFBF;
+            color: #F8E067;
             min-height: 100vh;
         }
 
@@ -35,7 +70,17 @@
             padding: 2rem;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
+            background-color: #4A3C92;
+        }
+
+        .logo {
+            width: 240px;
+            height: auto;
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 10;
         }
 
         .right-panel {
@@ -43,29 +88,29 @@
             margin-left: 33.33%;
             padding: 3rem 4rem;
             overflow-y: auto;
+            background-color: #4A3C92;
         }
 
         h1 {
-            font-family: 'Roboto Serif', serif;
-            font-style: italic;
+            font-family: 'Open Sauce Sans', sans-serif;
+            font-style: normal;
             font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
+            font-weight: 900;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            text-shadow: 6px 6px 0 #4A3C92;
+            text-shadow: 6px 6px 0 #540076;
             white-space: nowrap;
+            text-transform: lowercase;
         }
 
         .words {
-            font-family: 'Roboto Serif', serif;
-            font-style: italic;
+            font-family: 'Open Sauce Sans', sans-serif;
+            font-style: normal;
             font-size: clamp(1.5rem, 3vw, 2.2rem);
-            font-weight: 700;
+            font-weight: 900;
             line-height: 1.15;
-            transform: rotate(-8deg);
-            transform-origin: left top;
-            margin-left: 0.5rem;
-            text-shadow: 4px 4px 0 #4A3C92;
+            text-shadow: 6px 6px 0 #540076;
+            text-transform: lowercase;
         }
 
         .words span {
@@ -76,57 +121,93 @@
             font-size: clamp(2rem, 6vw, 3rem);
             font-weight: 700;
             margin-bottom: 2rem;
-            color: #C0EFBF;
+            color: #F8E067;
         }
 
         .schedule {
-            font-size: clamp(1.1rem, 3vw, 1.5rem);
             margin-bottom: 3rem;
         }
 
         .schedule .date {
-            font-size: clamp(1.3rem, 4vw, 1.8rem);
-            font-weight: 700;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            color: #540076;
+            text-shadow: 3px 3px 0 #F8E067;
+            display: inline;
+            margin-right: 0.5rem;
+            text-transform: lowercase;
+        }
+
+        .schedule .time {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            color: #540076;
+            text-shadow: 3px 3px 0 #F8E067;
+            display: inline;
+            text-transform: lowercase;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            color: #540076;
+            text-shadow: 3px 3px 0 #F8E067;
+            text-transform: lowercase;
+            margin-top: 2rem;
             margin-bottom: 1rem;
         }
 
-        .event {
-            margin-bottom: 2rem;
+        .schedule .datetime {
+            margin-bottom: 1.5rem;
         }
 
-        .event .time {
-            font-weight: 700;
-            margin-bottom: 0.25rem;
+        .schedule .details {
+            color: #F8E067;
+            font-family: 'Open Sauce Sans', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            line-height: 1.5;
         }
 
-        .event .activity,
-        .event .venue {
-            padding-left: 1.5rem;
-            line-height: 1.4;
+        .schedule .details p {
+            margin-bottom: 0.5rem;
         }
 
-        .event .venue {
-            opacity: 0.9;
+        .schedule .details .detail-time {
+            font-weight: 900;
         }
 
         .route-map {
             width: 100%;
             max-width: 600px;
-            border: 4px solid #C0EFBF;
-            border-radius: 8px;
         }
 
         .route-map img {
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 4px;
         }
 
         .description {
             margin-top: 2rem;
             font-size: clamp(1rem, 2.5vw, 1.2rem);
             line-height: 1.7;
+            max-width: 600px;
+        }
+
+        .gallery {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 600px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            box-shadow: 8px 8px 0 #540076;
         }
 
         .sponsors {
@@ -134,8 +215,11 @@
         }
 
         .sponsors h3 {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            font-weight: 700;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            color: #540076;
+            text-shadow: 3px 3px 0 #F8E067;
+            text-transform: lowercase;
             margin-bottom: 1rem;
         }
 
@@ -144,6 +228,13 @@
             display: flex;
             flex-wrap: wrap;
             gap: 1.5rem;
+        }
+
+        .sponsor-logo {
+            display: block;
+            width: 120px;
+            height: auto;
+            margin-top: 0.5rem;
         }
 
         .sponsors li {
@@ -173,36 +264,38 @@
 </head>
 <body>
     <div class="layout">
+        <img src="images/mardi-gras-logo-simple.png" alt="Mardi Gras logo" class="logo">
         <div class="left-panel">
             <h1>A Parade Is...</h1>
             <div class="words">
                 <span>Procession</span>
                 <span>Performance</span>
-                <span>prayer</span>
-                <span>Protest</span>
+                <span>Prayer</span>
+                <span><u>Protest</u></span>
                 <span>Party</span>
             </div>
         </div>
 
         <div class="right-panel">
             <div class="schedule">
-                <p class="date">February 17, 2026</p>
-
-                <div class="event">
-                    <p class="time">1-3pm:</p>
-                    <p class="activity">Mask, costume, and sign-making</p>
-                    <p class="venue">University Center Event Cafe (below the main lobby)</p>
+                <div class="datetime">
+                    <p class="date">February 17, 2026</p>
+                    <p class="time">3pm</p>
                 </div>
-
-                <div class="event">
-                    <p class="time">3-3:30pm:</p>
-                    <p class="activity">Parade!</p>
-                    <p class="venue">Roll from in front of the University Center (63 5th Ave)</p>
+                <div class="details">
+                    <p class="detail-time">1:00pm - 3:00pm</p>
+                    <p>Mask, costume, and sign-making</p>
+                    <p>University Center Event Cafe (below the main lobby)</p>
+                    <br>
+                    <p class="detail-time">3:00pm - 3:30pm</p>
+                    <p>Parade!</p>
+                    <p>Roll from in front of the University Center (63 5th Ave)</p>
                 </div>
             </div>
 
+            <p class="section-title">the route</p>
             <div class="route-map">
-                <img src="images/ParadeRoute1.png" alt="Parade route map showing the path through The New School campus">
+                <img src="images/ParadeMap3.png" alt="Parade route map showing the path through The New School campus">
             </div>
 
             <div class="description">
@@ -213,9 +306,17 @@
                 <h3>Sponsors</h3>
                 <ul>
                     <li>Loop</li>
-                    <li>Material Exchange</li>
+                    <li>
+                        <img src="images/materialexchange.png" alt="Material Exchange logo" class="sponsor-logo">
+                    </li>
                     <li>Coalition for Cut Programs</li>
                 </ul>
+            </div>
+
+            <p class="section-title">posters</p>
+            <div class="gallery">
+                <img src="images/poster1.jpeg" alt="Event poster">
+                <img src="images/poster2.jpeg" alt="Event poster">
             </div>
         </div>
     </div>
