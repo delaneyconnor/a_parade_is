@@ -74,13 +74,41 @@
             background-color: #4A3C92;
         }
 
+        .logo-container {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
         .logo {
-            width: 240px;
+            width: 100%;
+            max-width: 700px;
             height: auto;
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            z-index: 10;
+            border: none;
+            outline: none;
+            box-shadow: none;
+        }
+
+        .festival-btn {
+            margin-top: 1rem;
+            background-color: #FDDF4B;
+            color: #540076;
+            font-family: 'Open Sauce Sans', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            text-decoration: none;
+            text-transform: lowercase;
+            cursor: pointer;
+            box-shadow: 4px 4px 0 #540076;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+
+        .festival-btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #540076;
         }
 
         .right-panel {
@@ -94,22 +122,22 @@
         h1 {
             font-family: 'Open Sauce Sans', sans-serif;
             font-style: normal;
-            font-size: clamp(3.5rem, 8vw, 6rem);
+            font-size: clamp(3.25rem, 7.5vw, 5.5rem);
             font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
+            line-height: 1;
+            margin-bottom: 1rem;
             color: #540076;
-            text-shadow: 6px 6px 0 #FDDF4B;
+            text-shadow: 5px 5px 0 #FDDF4B;
             text-transform: lowercase;
         }
 
         .words {
             font-family: 'Open Sauce Sans', sans-serif;
             font-style: normal;
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(1.85rem, 3.75vw, 2.75rem);
             font-weight: 900;
-            line-height: 1.15;
-            text-shadow: 6px 6px 0 #540076;
+            line-height: 1.1;
+            text-shadow: 5px 5px 0 #540076;
             text-transform: lowercase;
         }
 
@@ -179,7 +207,7 @@
 
         .route-map {
             width: 100%;
-            max-width: 600px;
+            max-width: 700px;
         }
 
         .route-map img {
@@ -192,7 +220,7 @@
             margin-top: 2rem;
             font-size: clamp(1rem, 2.5vw, 1.2rem);
             line-height: 1.7;
-            max-width: 600px;
+            max-width: 700px;
         }
 
         .gallery {
@@ -200,7 +228,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            max-width: 600px;
+            max-width: 700px;
         }
 
         .gallery img {
@@ -254,6 +282,15 @@
                 padding: 2rem;
             }
 
+            .logo {
+                max-width: 280px;
+            }
+
+            .festival-btn {
+                font-size: 0.9rem;
+                padding: 0.6rem 1.2rem;
+            }
+
             .right-panel {
                 width: 100%;
                 margin-left: 0;
@@ -264,7 +301,6 @@
 </head>
 <body>
     <div class="layout">
-        <img src="images/mardi-gras-logo-simple.png" alt="Mardi Gras logo" class="logo">
         <div class="left-panel">
             <h1>A Parade Is...</h1>
             <div class="words">
@@ -300,6 +336,11 @@
 
             <div class="description">
                 <p>This two part engagement invites you to create masks from reclaimed materials, then parade them around campus alongside a second line jazz ensemble in celebration of Mardi Gras. Drawing on the New Orleans Mardi Gras traditions and Parsons historic costume balls, this parade encourages the re-appropriation of materials and community sentiments as tools for both celebration and critique. Parades generate social spaces for community gathering; they also act as a reminder of collective power. In this moment of institutional decomposition, we ask: how might a parade act as an outlet for celebration amid disarray? Whether participating solo or with your 'krewe', join us in blurring the boundaries of spectacle.</p>
+            </div>
+
+            <div class="logo-container">
+                <img src="images/mardi_gras_logo_web_banner.png" alt="Mardi Gras Reboot - An Archivally-Inflected Festival" class="logo">
+                <a href="https://event.newschool.edu/mardigrasreboot/" class="festival-btn">festival schedule</a>
             </div>
 
             <div class="sponsors">
